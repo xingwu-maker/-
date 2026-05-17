@@ -1,0 +1,2 @@
+[console_scripts]
+game-reai = packages.cli.main:app

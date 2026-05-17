@@ -1,0 +1,16 @@
+typer>=0.15
+rich>=13
+structlog>=24
+langchain>=0.3
+langchain-anthropic>=0.3
+pydantic>=2
+lxml>=5
+pymem>=1.14
+lief>=0.15
+
+[dev]
+pytest>=8
+pytest-asyncio>=0.25
+ruff>=0.9
+mypy>=1.14
+streamlit>=1.42

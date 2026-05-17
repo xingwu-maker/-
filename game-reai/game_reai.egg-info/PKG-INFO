@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: game-reai
+Version: 0.1.0
+Summary: AI 游戏逆向辅助工具 — 自动分析内存、找基址偏移、生成 CE 脚本
+License: MIT
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: typer>=0.15
+Requires-Dist: rich>=13
+Requires-Dist: structlog>=24
+Requires-Dist: langchain>=0.3
+Requires-Dist: langchain-anthropic>=0.3
+Requires-Dist: pydantic>=2
+Requires-Dist: lxml>=5
+Requires-Dist: pymem>=1.14
+Requires-Dist: lief>=0.15
+Provides-Extra: dev
+Requires-Dist: pytest>=8; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.25; extra == "dev"
+Requires-Dist: ruff>=0.9; extra == "dev"
+Requires-Dist: mypy>=1.14; extra == "dev"
+Requires-Dist: streamlit>=1.42; extra == "dev"

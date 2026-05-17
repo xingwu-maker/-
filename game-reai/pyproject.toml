@@ -1,0 +1,55 @@
+[project]
+name = "game-reai"
+version = "0.1.0"
+description = "AI 游戏逆向辅助工具 — 自动分析内存、找基址偏移、生成 CE 脚本"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "typer>=0.15",
+    "rich>=13",
+    "structlog>=24",
+    "langchain>=0.3",
+    "langchain-anthropic>=0.3",
+    "pydantic>=2",
+    "lxml>=5",
+    "pymem>=1.14",
+    "lief>=0.15",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=0.25",
+    "ruff>=0.9",
+    "mypy>=1.14",
+    "streamlit>=1.42",
+]
+
+[project.scripts]
+game-reai = "packages.cli.main:app"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "SIM"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.mypy]
+strict = true
+python_version = "3.11"
+explicit_package_bases = true
+mypy_path = "$MYPY_CONFIG_FILE_DIR"
+
+[[tool.mypy.overrides]]
+module = ["pymem", "langchain_core", "langchain_anthropic", "langchain"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
